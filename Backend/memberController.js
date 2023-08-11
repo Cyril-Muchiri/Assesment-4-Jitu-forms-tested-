@@ -10,17 +10,17 @@ const registerMember = async (req, res)=>{
         .input('e_name', mssql.VarChar, e_name)
         .input('email', mssql.VarChar, email)
         .input('password', mssql.VarChar, hashedPwd)
-        .execute('registerEmployeePROC')
+        .execute('registerMemberPROC')
 
         console.log(result);
 
         if (result.rowsAffected == 1){
             return res.status(200).json({
-                message: 'Employee registered successfully'
+                message: 'Member registered successfully'
             })
         }else{
             return res.status(200).json({
-                message: 'Employee registration failed'
+                message: 'Member registration failed'
             })
         }
 
