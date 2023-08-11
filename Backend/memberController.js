@@ -7,9 +7,9 @@ const registerMember = async (req, res)=>{
     const pool = await mssql.connect(sqlConfig);
 
         const result = await pool.request()
-        .input('e_name', mssql.VarChar, e_name)
+        .input('e_name', mssql.VarChar, userName)
         .input('email', mssql.VarChar, email)
-        .input('password', mssql.VarChar, hashedPwd)
+        .input('password', mssql.VarChar,pass)
         .execute('registerMemberPROC')
 
         console.log(result);
