@@ -1,0 +1,1 @@
+import {registerMember}  from './memberController'
